@@ -1,0 +1,74 @@
+package com.example.sample;
+
+import java.util.Scanner;
+
+public class ParkingVehicle {
+    int arrOfTwo[]=new int[20];
+    int arrOfFour[]=new int[20];
+
+    public void parking(int ch,int id) {
+        if (ch == 0) {
+            for (int i = 0; i < arrOfTwo.length; i++) {
+                if (arrOfTwo[i] == '\0') {
+                    arrOfTwo[i] = id;
+                    System.out.println("Parking is done....");
+                    break;
+                } else
+                    System.out.println("Parking isnt alloewd....Location is full");
+            }
+        }
+        else{
+            for (int i = 0; i < arrOfFour.length; i++) {
+                if (arrOfFour[i] == '\0') {
+                    arrOfFour[i] = id;
+                    System.out.println("Parking is done....");
+                    break;
+                } else
+                    System.out.println("Parking isnt alloewd....Location is full");
+            }
+        }
+    }
+    public void unParking(int ch,int id) {
+        int f=1;
+        if (ch == 0) {
+            for (int i = 0; i < arrOfTwo.length; i++) {
+                if (arrOfTwo[i] == id) {
+                    System.out.println("Unparking is Done......");
+                    arrOfTwo[i] = '\0';
+                    f=0;
+                    break;
+                }
+            }
+            if(f==1)
+                System.out.println("Unparking Cant be done");
+        }
+        else {
+            for (int i = 0; i < arrOfFour.length; i++) {
+                if (arrOfFour[i] == id) {
+                    System.out.println("Unparking is Done......");
+                    arrOfFour[i] = '\0';
+                    f=0;
+                    break;
+                }
+            }
+            if(f==1)
+            System.out.println("Unparking Cant be done");
+
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Vehicle type (0/1)");
+        int ch=sc.nextInt();
+        System.out.println("Enter Vehicle number to be park");
+        int id=sc.nextInt();
+        ParkingVehicle parkingVehicle=new ParkingVehicle();
+        parkingVehicle.parking(ch,id);
+        System.out.println("Enter Vehicle type (0/1)");
+        int ch1=sc.nextInt();
+        System.out.println("Enter Vehicle number to be unpark");
+        int id1=sc.nextInt();
+        parkingVehicle.unParking(ch1,id1);
+    }
+}

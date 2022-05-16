@@ -1,0 +1,93 @@
+package com.example.sample;
+import java.util.*;
+import java.text.*;
+public class Parking {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);   int n=10;
+        ArrayList<String>arrli = new ArrayList<String>(n); ArrayList<String>arrli2= new ArrayList<String>(n);
+        int menu = 0;
+        System.out.println("Vehicle Parking/Unparking");
+        System.out.println();
+        System.out.println("1. Parking");
+        System.out.println("2. Unparking");
+        System.out.println("3. Exit");
+        boolean quit = false;
+        do {
+            System.out.print("Please enter your choice: ");
+            menu = input.nextInt();
+            switch (menu) {
+                case 1:
+                    System.out.println("Parking Slots..");
+                    public void Parking(){
+                    System.out.print("Select Vehicle type: ");
+                    String type = input.next();
+
+                    if (type == "Two Wheeler") {
+                        for (int i = 0; i <n; i++) {
+                            arrli.add(String.valueOf(i));
+                                System.out.println("Parking is done....");
+                                break;}
+                           if(arrli.size()>n){
+                            System.out.println("Parking isnt alloewd....Location is full");
+                        }
+                    } else if (type == "Four Wheeler") {
+                        for (int i = 0; i <n;i++) {
+                           arrli2.add(String.valueOf(i));
+                                System.out.println("Parking is done....");
+                                break;}
+                            if(arrli2.size()>n){
+                            System.out.println("Parking isnt alloewd....Location is full");
+                        }
+                    }
+                }
+
+                break;
+                case 2:
+                    System.out.print("Select Vehicle type: ");
+                    String type1 = input.next();
+                    public void unParking() {
+                    String type1
+                    int f = 1;
+                    if (type1 == "Two Wheeler") {
+                        int l3=arrOfTwo.length;
+                        for (int i = 0; i < arrOfTwo.length; i++) {
+                            if (arrOfTwo[i] !=0) {
+                                System.out.println("Unparking is Done......");
+                                arrOfTwo[i] = '\0';
+                                f = 0;
+                                break;
+                            }
+                        }
+                        if (f == 1)
+                            System.out.println("Unparking Cant be done");
+                    } else if(type1=="Four Wheeler"){
+                        for (int i = 0; i < arrOfFour.length; i++) {
+                            if (arrOfFour[i] != 0) {
+                                System.out.println("Unparking is Done......");
+                                arrOfFour[i] = '\0';
+                                f = 0;
+                                break;
+                            }
+                        }
+                        if (f == 1)
+                            System.out.println("Unparking Cant be done");
+
+                    }
+                }
+            }
+
+                    break;
+                case 4:
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid Entry!");
+            }
+        }
+
+        while (!quit);
+    }
+
+
+}
